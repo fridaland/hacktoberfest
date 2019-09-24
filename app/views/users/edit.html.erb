@@ -20,15 +20,15 @@
 <section class="section reg-content">
   <div>
     <h1 class="title is-1">About you</h1>
-    <p>Please confirm your email address and accept terms. We’ll be in touch with details about redeeming a shirt and/or stickers once Hacktoberfest is over. </p>
+    <p>Please confirm your email address and accept the terms.</p>
      <%= form_for :user, url: { action: 'update' }, method: :patch do |f| %>
       <% if @current_user.errors.any? %>
          <p class="error"><%= @current_user.errors.full_messages %></p>
       <% end %>
       <%= f.select :email, @emails %>
-     <p> Sign up for marketing emails: <%= f.check_box :marketing_emails %><br />
-
-      I have read and understand Terms & Conditions : <%= f.check_box :terms_acceptance %></p>
+     <p><%= f.check_box :terms_acceptance %> I have read and understand the <a href="https://do.co/hacktoberconduct">Code of Conduct</a> <br />
+        <%= f.check_box :marketing_emails %> Send me updates related to the Hacktoberfest community, open source, and products from DigitalOcean.
+      </p>
       <%= f.submit 'Start Hacking', :class => 'button'%>
     <% end %>
   </div>
