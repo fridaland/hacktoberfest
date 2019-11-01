@@ -50,5 +50,22 @@ RSpec.describe ImportPrMetadataService do
         expect(PRStat.count).to eq(0)
       end
     end
+
+    context 'The user has been deleted from Github' do
+      before do
+        allow_any_instance_of(GithubPullRequestService)
+          .to receive(:pull_requests)
+          .and_raise(GithubPullRequestService::UserDeletedError.new)
+      end
+
+      it 'updates the correct UserStat' do
+        user_stat = UserStat.create(user_id: user.id, data: user)
+
+        ImportReposMetadataService.call(user)
+
+        user_stat.reload
+        expect(user_stat.deleted).to eq(true)
+      end
+    end
   end
 end
