@@ -16,7 +16,7 @@ module ImportPrMetadataService
     end
 
     pr_data.map do |pr|
-      PRStat.where(pr_id: pr.id).first_or_create(data: pr)
+      ImportOnePrMetadataJob.perform_async(pr.url)
     end
   end
 end
