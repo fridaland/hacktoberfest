@@ -58,13 +58,12 @@ RSpec.describe ImportPrMetadataService do
           .and_raise(GithubPullRequestService::UserDeletedError.new)
       end
 
-      it 'updates the correct UserStat' do
-        user_stat = UserStat.create(user_id: user.id, data: user)
+      it 'deletes the UserStat' do
+        UserStat.create(user_id: user.id, data: user)
 
         ImportReposMetadataService.call(user)
 
-        user_stat.reload
-        expect(user_stat.deleted).to eq(true)
+        expect(UserStat.count).to eq(0)
       end
     end
   end
