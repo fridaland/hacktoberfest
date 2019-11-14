@@ -68,7 +68,7 @@ FactoryBot.define do
         [{ 'github_pull_request' =>
           { 'graphql_hash' =>
              { 'id' => 'MDExOlB1bGxSZXF1ZXN0MzI1NDc3OTA3',
-               'url' => 'https://github.com/raise-dev/hacktoberfest-test/pull/18',
+               'url' => 'https://github.com/raise-dev/hacktoberfestt/pull/18',
                'body' => '',
                'title' => 'Peculiar branch',
                'labels' => { 'edges' => [] },
@@ -77,7 +77,7 @@ FactoryBot.define do
          { 'github_pull_request' =>
            { 'graphql_hash' =>
              { 'id' => 'MDExOlB1bGxSZXF1ZXN0MzI1NDc3OTY1',
-               'url' => 'https://github.com/raise-dev/hacktoberfest-test/pull/19',
+               'url' => 'https://github.com/raise-dev/hacktoberfest/pull/19',
                'body' => '',
                'title' => 'Fun branch',
                'labels' => { 'edges' => [] },
@@ -86,7 +86,7 @@ FactoryBot.define do
          { 'github_pull_request' =>
            { 'graphql_hash' =>
              { 'id' => 'MDExOlB1bGxSZXF1ZXN0MzI1NDc4MDIy',
-               'url' => 'https://github.com/raise-dev/hacktoberfest-test/pull/20',
+               'url' => 'https://github.com/raise-dev/hacktoberfest/pull/20',
                'body' => '',
                'title' => 'Super branch',
                'labels' => { 'edges' => [] },
@@ -95,7 +95,7 @@ FactoryBot.define do
          { 'github_pull_request' =>
            { 'graphql_hash' =>
              { 'id' => 'MDExOlB1bGxSZXF1ZXN0MzI1NDc4MDc2',
-               'url' => 'https://github.com/raise-dev/hacktoberfest-test/pull/21',
+               'url' => 'https://github.com/raise-dev/hacktoberfest/pull/21',
                'body' => '',
                'title' => 'readme addition',
                'labels' => { 'edges' => [] },
@@ -104,10 +104,12 @@ FactoryBot.define do
          { 'github_pull_request' =>
            { 'graphql_hash' =>
              { 'id' => 'MDExOlB1bGxSZXF1ZXN0MzI1NDgxMzA4',
-               'url' => 'https://github.com/raise-dev/hacktoberfest-test/pull/22',
+               'url' => 'https://github.com/raise-dev/hacktoberfest/pull/22',
                'body' => '',
                'title' => 'Fakerson',
-               'labels' => { 'edges' => [{ 'node' => { 'name' => 'invalid' } }] },
+               'labels' => {
+                 'edges' => [{ 'node' => { 'name' => 'invalid' } }]
+               },
                'createdAt' => '2019-10-07T20:32:11Z',
                'repository' => { 'databaseId' => 211_178_535 } } } }]
       end
